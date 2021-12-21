@@ -30,7 +30,6 @@ def test2():
 
 @app.post('/upload')
 def upload():
-    print("THIS -> Server")
     file = request.files['image']
     new_file_name = str(
         str(time.time()) + '.png'
@@ -52,6 +51,7 @@ def upload():
     #searching
     searcher = Search('./index.csv')
     results = searcher.search(features)
+    results = results[:12]
     RESULTS_LIST = list()
     for (score, pathImage) in results:
         RESULTS_LIST.append(
@@ -62,4 +62,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(debug=True , host="0.0.0.0")
+    app.run(debug=True)
