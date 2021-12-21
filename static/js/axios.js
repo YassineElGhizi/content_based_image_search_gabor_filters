@@ -3,9 +3,9 @@ let upload = () =>
 
     let timerInterval
     Swal.fire({
-      title: 'Auto close alert!',
-      html: 'I will close in <b></b> milliseconds.',
-      timer: 3000,
+      title: 'Please Wait !',
+      html: '',
+      timer: 2600,
       timerProgressBar: true,
       didOpen: () => {
         Swal.showLoading()
