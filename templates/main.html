@@ -8,46 +8,54 @@
 
 <!--    <link rel="stylesheet" href= "{{ url_for('static',filename='css/a.css') }}" >-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
 
 
 </head>
 
-<body>
-
+<body style="font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif">
     <div id="main-wrapper">
-        <div class="page-wrapper" style="margin: auto;width: 80%;padding: 10px;background-color: #ffffff">
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-5 align-self-center">
-                        <h1 >Content Based Image Search.</h1>
-                        <h1 class="page-title">Using Gabor Filtres</h1>
+        <div class="page-wrapper" >
+            <div class="navbar navbar-expand-md navbar-dark bd-navbar" style="background-color: #5f109a; color: #ffff;padding-left: 2rem;">
+                    <div class="">
+                        <h1 >Content Based Image Search</h1>
+                        <h6 class="">Gabor Filtres</h6>
                     </div>
-                </div>
             </div>
 
-                    <div class="col-lg-6 col-md-12" style="margin-top:1vw">
+
+
+            <div class="d-flex" style="margin: auto;width: 95%;padding: 10px;">
+                <div class="outer">
+                    <div class="inner" style="margin: 2rem 2rem;">
+                        <div class="d-inline-block" style="width: 100%;background-color: #ffffff">
                         <div class="card">
+                              <div class="card-header" style="background-color: #ffffff;">
+                                Upload a PNG Picture
+                              </div>
                             <div class="card-body" style="background-color: #f1f1f1">
-                                <div>Upload a PNG Picture</div>
-                                <input type="file" name="myImage" id="img" accept="image/x-png" />
+                                    <input type="file" name="myImage" id="img" accept="image/x-png" class="form-control"  />
                                 <br>
                                 <br>
-                                <button onclick="upload()">Upload</button>
+                                <button onclick="upload()" class="btn btn-success" style="background-color: #5f109a; border-color: #5f109a;">Upload</button>
                             </div>
                         </div>
                     </div>
-
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-lg-12 col-md-12">
-                        <div class="card" style="margin: auto;width: 80%;padding: 10px;background-color: #ffffff">
+                    </div>
+                    <div class="inner">
+                        <img src="{{ url_for('static',filename='logo/logo.png') }}" alt="" width="400px" height="400px">
+                    </div>
+                </div>
+                    <div class="d-inline-block" style="margin: 2rem 2rem; width: 60%;">
+                        <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div>
-                                        <h4 class="card-title mb-0">Images</h4>
+                                        <h4 class="card-title mb-0">Results</h4>
                                     </div>
                                 </div>
                             </div>
@@ -65,10 +73,12 @@
                             </div>
                         </div>
                     </div>
-
-                </div>
             </div>
+
+
         </div>
+    </div>
+
     </div>
 
     <div class="chat-windows"></div>
