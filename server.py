@@ -50,8 +50,8 @@ def upload():
 
     #searching
     searcher = Search('./index.csv')
-    results = searcher.search(features)
-    results = results[:12]
+    # results = searcher.search(features)
+    results = searcher.gaborSearch(features)
     RESULTS_LIST = list()
     for (score, pathImage) in results:
         RESULTS_LIST.append(

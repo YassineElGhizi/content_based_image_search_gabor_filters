@@ -35,7 +35,6 @@ class GaborDescriptor:
 		 		hist[hs][ws] = self._gabor(img_r,gabor_kernels)
 
 		hist /= np.sum(hist)
-		#print(hist.shape)
 		return hist.flatten()
 
 	def _power(self,image,kernel):
@@ -56,5 +55,4 @@ class GaborDescriptor:
 		hist = hist / np.sum(hist, axis=0)
 		#print(hist.flatten())
 		#print(hist.T.flatten())
-
 		return hist.T.flatten() # .T -> transpose
